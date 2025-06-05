@@ -1,0 +1,50 @@
+.review--carousel__container {
+  background-color: #f7f2e8;
+  width: 100%;
+
+  position: relative;
+  top: -108px;
+
+  padding-block: 128px;
+}
+
+.arrow--background {
+  padding: 11px;
+  border-radius: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.active--arrow {
+  background-color: #090a0b1a;
+}
+.inactive--arrow {
+  background-color: #090a0b12;
+}
+
+.active--arrow img {
+  filter: invert(0%) sepia(0%) saturate(27%) hue-rotate(146deg) brightness(91%)
+    contrast(109%);
+}
+
+.inactive--arrow img {
+  filter: invert(70%) sepia(8%) saturate(423%) hue-rotate(179deg)
+    brightness(93%) contrast(85%);
+}
+
+.arrow--background img {
+  width: 10px;
+  height: 10px;
+}
+
+.arrow--background:hover {
+  background-color: #090a0b25;
+  cursor: pointer;
+}
+
+.prev-arrow:hover img {
+  transform: translateX(-4px);
+}
+
+.next-arrow:hover img {
+  transform: translateX(4px);
+}

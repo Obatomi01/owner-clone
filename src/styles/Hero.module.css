@@ -1,0 +1,68 @@
+.hero--container {
+  background: linear-gradient(to bottom, #f7f2e8, #fffdf8, #ffffff);
+}
+
+.image-container {
+  width: 399px;
+  height: 799px;
+
+  /* margin: auto; */
+  /* left: 50%; */
+
+  /* transform: translate(50%, 0); */
+
+  background-image: url('../assets/phone-ui.png');
+  background-size: contain;
+  padding-top: 10px;
+
+  background-repeat: no-repeat;
+
+  /* display: flex;
+  justify-content: center; */
+}
+
+.container {
+  width: 87%;
+  height: 87%;
+  margin: auto;
+
+  background: url('../assets/sprite-sheet.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #fff;
+
+  animation: scrollChat 20s ease-in-out infinite;
+
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+@keyframes scrollChat {
+  0% {
+    background-position: 0 0;
+  }
+  8% {
+    background-position: 0 0;
+  }
+
+  20% {
+    background-position: 0 -400px;
+  }
+  28% {
+    background-position: 0 -400px;
+  }
+
+  40% {
+    background-position: 0 -700px;
+  }
+  48% {
+    background-position: 0 -700px;
+  }
+
+  60% {
+    background-position: 0 -1000px;
+  }
+  100% {
+    background-position: 0 -1000px;
+  }
+}

@@ -1,0 +1,15 @@
+.progress-wrapper {
+  height: 4px;
+  background-color: #e0e0e0;
+  overflow: hidden;
+  position: relative;
+  margin-top: 8px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #3b82f6;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.1s linear;
+}

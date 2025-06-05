@@ -1,0 +1,22 @@
+.ratings--container {
+  background: linear-gradient(to top, #e8e1d2, #f7f2e8, #fffdf8, #ffffff);
+  width: 100%;
+
+  position: relative;
+}
+
+.review--fade-out {
+  position: relative;
+  mask-image: linear-gradient(
+    to top,
+    transparent 0%,
+    transparent 30%,
+    black 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to top,
+    transparent 0%,
+    transparent 30%,
+    black 100%
+  );
+}

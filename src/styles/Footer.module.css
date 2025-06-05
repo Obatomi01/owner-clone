@@ -1,0 +1,10 @@
+.footer--links .link--heading {
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.footer--links {
+  display: flex;
+  gap: 64px;
+}
