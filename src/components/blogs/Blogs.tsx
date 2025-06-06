@@ -1,7 +1,7 @@
 import styles from '../../styles/BeliefsAndBlogs.module.css';
 import ArrowHoverButton from '../ArrowHoverButton';
 
-import Owner10 from '../../assets/business-owner/owner-10.jpg';
+import Owner10 from '../../assets/business-owner/owner-9.jpg';
 import GoogleSearch from '../../assets/google-search.jpg';
 import Notes from '../../assets/notes.jpg';
 
