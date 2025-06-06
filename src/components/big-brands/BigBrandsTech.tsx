@@ -12,12 +12,12 @@ type Props = {};
 export default function BigBrandsTech({}: Props) {
   return (
     <section
-      className={`${styles['big--brands__container']} rounded-[100px] w-full py-[128px] relative -top-14 z-15 bg-white`}
+      className={`${styles['big--brands__container']} rounded-[40px] w-full py-[92px] md:py-[128px] relative -top-14 z-15 bg-white`}
       style={{
         overflowX: 'hidden',
       }}
     >
-      <div>
+      <div className='hidden md:block'>
         <h3 className={`text-4xl font-bold m-auto  text-center`}>
           Give your restaurant the same tech
         </h3>
@@ -26,19 +26,23 @@ export default function BigBrandsTech({}: Props) {
         </h3>
       </div>
 
+      <h3 className='block md:hidden w-[95%] text-3xl font-bold mb-6 text-center mx-auto'>
+        Give your restaurant the same tech as the big brands
+      </h3>
+
       <div className='flex flex-col w-[96%] md:w-[90%] xl:w-[1200px] m-auto mt-12 gap-4'>
         <div
           style={{
             backgroundImage: `url(${FoodPhoneScreen})`,
             width: '100%',
-            height: '500px',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             borderRadius: '40px',
             position: 'relative',
           }}
+          className='h-[400px] md:h-[500px] flex justify-center'
         >
-          <div className='absolute bottom-8 right-8'>
+          <div className='hidden md:block absolute bottom-8 md:right-8 text-center'>
             <h5 className={`${styles['other-texts']}  text-lg font-bold`}>
               Your customers are used to ordering on their phone.
             </h5>{' '}
@@ -47,13 +51,20 @@ export default function BigBrandsTech({}: Props) {
               <span className='text-[#fff]'> mobile app.</span>
             </h5>
           </div>
+
+          <div className='md:hidden absolute bottom-8 text-center w-[90%]'>
+            <h5 className={`${styles['other-texts']}  text-lg font-bold`}>
+              Your customers are used to ordering on their phone. That’s why we
+              give your restaurant its own{' '}
+              <span className='text-[#fff]'> mobile app.</span>
+            </h5>
+          </div>
         </div>
 
-        <div className='flex flex-col lg:flex-row gap-4 items-center'>
+        <div className='flex flex-col lg:flex-row gap-4 items-center '>
           <div
             style={{
               backgroundImage: `url(${SkeletonBackground})`,
-              height: '500px',
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
               borderRadius: '40px',
@@ -61,10 +72,10 @@ export default function BigBrandsTech({}: Props) {
               display: 'flex',
               justifyContent: 'center',
             }}
-            className='w-full lg:w-[50%]'
+            className='w-full lg:w-[50%] h-[400px] md:h-[500px]'
           >
             <h5
-              className={`${styles['other-texts']} absolute bottom-8 text-lg font-bold text-center w-[60%]`}
+              className={`${styles['other-texts']} absolute bottom-8 text-lg font-bold text-center w-[90%] md:w-[60%]`}
             >
               Get higher Google rankings with your AI-powered
               <span className='text-[#fff]'> restaurant website.</span>

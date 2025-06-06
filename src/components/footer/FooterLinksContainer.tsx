@@ -7,7 +7,7 @@ type Props = {};
 export default function FooterLinksContainer({}: Props) {
   return (
     <section
-      className='w-[99%] mx-auto mt-16 p-8 rounded-2xl flex flex-col gap-16'
+      className='w-[99%] mx-auto px-2 mt-16 py-8 md:p-8 rounded-2xl flex flex-col gap-16'
       style={{
         backgroundColor: '#f2f0ed',
       }}

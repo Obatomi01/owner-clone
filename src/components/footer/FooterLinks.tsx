@@ -1,6 +1,9 @@
 import styles from '../../styles/Footer.module.css';
 
-type Props = {};
+type Props = {
+  isMobileNav?: boolean
+  onCloseNav?: () => void
+};
 
 const productLinks = [
   'Restaurant Website',

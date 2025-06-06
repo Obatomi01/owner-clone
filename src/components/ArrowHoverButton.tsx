@@ -6,11 +6,17 @@ import styles from '../styles/General.module.css';
 
 type Props = {
   text: string;
-  isBlack: boolean;
+  isBlack?: boolean;
   isCentered?: boolean;
+  isBlue?: boolean;
 };
 
-export default function ArrowHoverButton({ isBlack, text, isCentered }: Props) {
+export default function ArrowHoverButton({
+  isBlack,
+  text,
+  isCentered,
+  isBlue,
+}: Props) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -18,9 +24,11 @@ export default function ArrowHoverButton({ isBlack, text, isCentered }: Props) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={`flex items-center gap-2 px-4 py-2 ${
-        isBlack ? 'bg-black' : 'bg-[#00000014] hover:bg-[#00000029]'
-      } ${
-        isBlack ? 'text-white' : 'text-black'
+        isBlack
+          ? 'bg-black text-white'
+          : isBlue
+          ? 'bg-[#015BF8] sm:bg-black text-white'
+          : 'bg-[#00000014] hover:bg-[#00000029] text-black'
       } rounded-lg transition-all duration-300 ${
         isCentered ? 'm-auto' : ''
       } cursor-pointer ${styles['arrow--hover__button']}`}

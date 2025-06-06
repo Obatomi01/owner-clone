@@ -19,14 +19,14 @@ const items: OwnerReviewProps[] = [
     imgSrc: Owner1,
     ownerName: 'Fernando Izaguirre',
     description: (
-      <div className='flex flex-col gap-4'>
+      <div className='flex lg:flex-col gap-4'>
         <div>
-          <h3 className='text-5xl font-semibold'>+54%</h3>
+          <h3 className='text-3xl md:text-4xl lg:text-5xl font-bold'>+54%</h3>
           <p className='text-sm'>Sales growth and switching to owner</p>
         </div>
 
         <div>
-          <h3 className='text-5xl font-semibold'>11,000</h3>
+          <h3 className='text-3xl md:text-4xl lg:text-5xl font-bold'>11,000</h3>
           <p className='text-sm'>
             Installs of their new mobile app, created with owner.
           </p>
@@ -40,14 +40,18 @@ const items: OwnerReviewProps[] = [
     imgSrc: Owner3,
     ownerName: 'Jessica Lee',
     description: (
-      <div className='flex flex-col gap-4'>
+      <div className='flex lg:flex-col gap-4'>
         <div>
-          <h3 className='text-5xl font-semibold'>+$104,000</h3>
+          <h3 className='text-3xl md:text-4xl lg:text-5xl font-bold'>
+            +$104,000
+          </h3>
           <p className='text-sm'>Online Slaes</p>
         </div>
 
         <div>
-          <h3 className='text-5xl font-semibold'>$21,000</h3>
+          <h3 className='text-3xl md:text-4xl lg:text-5xl font-bold'>
+            $21,000
+          </h3>
           <p className='text-sm'>Savings in third-party fees</p>
         </div>
       </div>
@@ -59,14 +63,18 @@ const items: OwnerReviewProps[] = [
     imgSrc: Owner2,
     ownerName: 'Michael Chen',
     description: (
-      <div className='flex flex-col gap-4'>
+      <div className='flex lg:flex-col gap-4'>
         <div>
-          <h3 className='text-5xl font-semibold'>+$72,000</h3>
+          <h3 className='text-3xl md:text-4xl lg:text-5xl font-bold'>
+            +$72,000
+          </h3>
           <p className='text-sm'>Online Slaes</p>
         </div>
 
         <div>
-          <h3 className='text-5xl font-semibold'>$19,000</h3>
+          <h3 className='text-3xl md:text-4xl lg:text-5xl font-bold'>
+            $19,000
+          </h3>
           <p className='text-sm'>Savings in third-party fees</p>
         </div>
       </div>
@@ -113,15 +121,17 @@ export default function ReviewCarousel() {
         </div>
       </div>
 
-      <div className='flex justify-between w-full max-w-[1200px] px-16 items-center'>
+      <div className='flex justify-center lg:justify-between w-full max-w-[1200px] px-16 items-center'>
         <button
           onClick={scrollPrev}
           className={`flex items-center gap-2 p-2 rounded-2xl transition-colors hover:bg-[#090a0b12] cursor-pointer ${styles['prev-arrow']}`}
         >
-          <div className={`${styles['arrow--background']}`}>
+          <div
+            className={`${styles['arrow--background']} ${styles['active--arrow']}`}
+          >
             <img src={ArrowBack} alt='Previous' />
           </div>
-          <p>
+          <p className='hidden lg:block'>
             Previous{' '}
             <span className='font-medium text-[#000]'>
               {items[prevIndex].companyName}
@@ -133,13 +143,15 @@ export default function ReviewCarousel() {
           onClick={scrollNext}
           className={`flex items-center gap-2 p-2 rounded-2xl transition-colors hover:bg-[#090a0b12] cursor-pointer ${styles['next-arrow']}`}
         >
-          <p>
+          <p className='hidden lg:block'>
             Next{' '}
             <span className='font-medium text-[#000]'>
               {items[nextIndex].companyName}
             </span>
           </p>{' '}
-          <div className={`${styles['arrow--background']}`}>
+          <div
+            className={`${styles['arrow--background']} ${styles['active--arrow']}`}
+          >
             <img src={ArrowNext} alt='Next' />
           </div>
         </button>

@@ -1,11 +1,16 @@
 import { useState } from 'react';
 import styles from '../styles/General.module.css';
 
-const MenuButton = () => {
+type Props = {
+  onPress: () => void;
+};
+
+const MenuButton = ({ onPress }: Props) => {
   const [opened, setOpened] = useState(false);
 
   const toggleMenu = () => {
     setOpened((prev) => !prev);
+    onPress();
   };
 
   return (

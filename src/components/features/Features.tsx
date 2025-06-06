@@ -158,14 +158,18 @@ const Features = () => {
 
   return (
     <div className='mx-auto mt-[144px] md:w-[90%] lg:w-[1000px] xl:w-[1200px]'>
-      <div>
-        <h2 className='text-4xl font-bold text-center mx-auto'>
+      <div className='hidden md:block'>
+        <h2 className='text-3xl md:text-4xl font-bold text-center mx-auto'>
           With Owner, you get more traffic,
         </h2>
-        <h2 className='text-4xl font-bold mb-6 text-center mx-auto'>
+        <h2 className='text-3xl md:text-4xl font-bold mb-6 text-center mx-auto'>
           more sales, more repeat customers
         </h2>
       </div>
+
+      <h2 className='block md:hidden w-[95%] text-3xl font-bold mb-6 text-center mx-auto'>
+        With Owner, you get more traffic, more sales, more repeat customers
+      </h2>
 
       <div className='hidden lg:grid grid-flow-col auto-cols-[90%] gap-4 lg:grid-cols-4 lg:auto-cols-auto mb-8'>
         {items.map((item, index) => (

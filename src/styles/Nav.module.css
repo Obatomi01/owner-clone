@@ -15,6 +15,21 @@
   align-items: center;
 }
 
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out;
+}
+
 /* MEDIA QUERIES */
 @media (max-width: 1400px) {
   .nav--contents {
