@@ -19,16 +19,16 @@ export default function Feature({
         height: '100%',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
-        display: 'flex',
+
         justifyContent: 'space-between',
-        alignItems: 'center',
         borderRadius: '48px',
         overflow: 'hidden',
       }}
+      className='flex flex-col md:flex-row md:items-center '
     >
-      <div className='w-[40%] pl-8'>
+      <div className='md:w-[40%] pl-8 pt-4 md:pt-0'>
         <p
-          className='text-2xl font-bold mb-2'
+          className='text-2xl font-bold md:mb-2'
           style={{
             color: '#777',
           }}
@@ -46,7 +46,7 @@ export default function Feature({
       </div>
 
       {rightImage !== '' && (
-        <div className='w-[60%] h-[100%]'>
+        <div className='h-[450px] md:w-[60%] md:h-[100%]'>
           <img
             src={rightImage}
             alt={title}

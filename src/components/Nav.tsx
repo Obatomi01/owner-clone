@@ -94,7 +94,7 @@ export default function Nav({}: Props) {
 
       {showMobileMenu && (
         <div
-          className={`fixed top-[64px] left-0 w-full h-[calc(100vh-64px)] z-40 overflow-y-auto bg-white shadow-md ${styles['animate-slideDown']} py-4 px-4 md:px-10`}
+          className={`fixed top-[64px] left-0 w-full h-[calc(100vh-64px)] z-40 overflow-y-auto bg-white shadow-md ${styles['animate-slideDown']} pt-4 pb-48 px-4 md:px-10`}
         >
           <FooterLinks
             isMobileNav

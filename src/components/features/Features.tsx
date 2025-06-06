@@ -144,7 +144,6 @@ const Features = () => {
     }
   };
 
-  // Modified navigation functions with validation
   const goToPrevious = () => {
     if (isAnimating || currentIndex === 0 || !items?.length) return; // Don't proceed if already at first slide
     goToSlide(currentIndex - 1);
@@ -225,32 +224,9 @@ const Features = () => {
         </motion.div>
       </div>
 
-      <MobileFeatureSlider
-        items={items}
-        getButtonState={getButtonState}
-        isAutoScrolling={isAutoScrolling}
-        isAnimating={isAnimating}
-        progressKey={progressKey}
-        currentIndex={currentIndex}
-        setCurrentIndex={(index) => {
-          // Only update if it's a valid manual change (not from auto-scroll)
-          if (index !== currentIndex && !isAnimating) {
-            setCurrentIndex(index);
-            setTargetIndex(index);
-            setProgressKey((prev) => prev + 1);
-            setIsAutoScrolling(false);
-            setIsAnimating(true);
+      <MobileFeatureSlider items={items} />
 
-            setTimeout(() => {
-              setIsAnimating(false);
-              setIsAutoScrolling(true);
-              setProgressKey((prev) => prev + 1);
-            }, 1000);
-          }
-        }}
-      />
-
-      <div className='flex justify-center lg:justify-between mt-6 px-10'>
+      <div className='hidden lg:flex justify-center lg:justify-between mt-6 px-10'>
         <button
           onClick={goToPrevious}
           className={`flex items-center gap-2 p-2 rounded-4xl transition-colors hover:bg-[#090a0b12] cursor-pointer ${styles['prev-arrow']}`}
