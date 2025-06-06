@@ -30,7 +30,7 @@ const beliefs: BeliefProps[] = [
 export default function Beliefs({}: Props) {
   return (
     <section className={styles['content--container']}>
-      <div className='w-[95%] lg:w-[50%] xl:w-[40%] flex flex-col justify-between gap-8'>
+      <div className='w-[95%] mx-auto lg:mx-unset lg:w-[50%] xl:w-[40%] flex flex-col justify-between gap-8'>
         <div className='flex flex-col gap-8 lg:gap-4'>
           <h2 className='text-5xl font-semibold'>
             Three beliefs that guide our company

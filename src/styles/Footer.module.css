@@ -9,3 +9,11 @@
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 40px;
 }
+
+/* MEDIA QUERY */
+@media (max-width: 1024px) {
+  .footer--links {
+    display: flex;
+    flex-direction: column;
+  }
+}

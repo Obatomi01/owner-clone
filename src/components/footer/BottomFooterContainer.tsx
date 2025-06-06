@@ -12,10 +12,10 @@ const rightLinks = [
 
 export default function BottomFooterContainer({}: Props) {
   return (
-    <div className='w-full flex justify-between items-center'>
+    <div className='w-full flex flex-col-reverse justify-between gap-4 lg:gap-0 lg:items-center lg:flex-row '>
       <p className='text-xs'>2025 © Owner. All rights reserved.</p>
 
-      <div className='flex gap-4'>
+      <div className='flex gap-4 whitespace-nowrap overflow-x-auto lg:overflow-x-hidden'>
         {rightLinks.map((link, index) => (
           <p
             key={index}
