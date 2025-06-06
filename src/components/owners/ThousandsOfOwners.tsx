@@ -3,19 +3,19 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Owner from './Owner';
 
-import Owner1 from '../../assets/business-owner/owner-1.jpeg';
+import Owner1 from '../../assets/business-owner/owner-12.jpg';
 import Owner2 from '../../assets/business-owner/owner-2.jpg';
 import Owner3 from '../../assets/business-owner/owner-3.jpg';
 import Owner4 from '../../assets/business-owner/owner-4.jpg';
 import Owner5 from '../../assets/business-owner/owner-5.jpg';
 import Owner6 from '../../assets/business-owner/owner-6.jpg';
-import Owner7 from '../../assets/business-owner/owner-7.jpg';
+import Owner7 from '../../assets/business-owner/owner-11.jpg';
 
 import type { OwnerProps } from './Owner';
 
 const owners: OwnerProps[] = [
   {
-    owner: 'Fernando Izaguirre',
+    owner: 'Yinka Emeka',
     company: 'Owner of Sushi Addicts',
     description: (
       <h4 className='font-bold text-xl'>
