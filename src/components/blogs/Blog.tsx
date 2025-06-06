@@ -7,7 +7,7 @@ export type BlogProps = {
 
 export default function Blog({ description, imgSrc }: BlogProps) {
   return (
-    <div className='group w-[33%] h-[450px] overflow-hidden rounded-2xl relative'>
+    <div className='group w-full lg:w-[33%] h-[550px] lg:h-[450px] overflow-hidden rounded-2xl relative'>
       <div
         style={{
           backgroundImage: `url(${imgSrc})`,

@@ -12,13 +12,21 @@ type Props = {};
 export default function BigBrandsTech({}: Props) {
   return (
     <section
-      className={`${styles['big--brands__container']} rounded-[100px] w-full py-[128px] relative -top-14 z-1 bg-white`}
+      className={`${styles['big--brands__container']} rounded-[100px] w-full py-[128px] relative -top-14 z-15 bg-white`}
+      style={{
+        overflowX: 'hidden',
+      }}
     >
-      <h3 className={`text-4xl font-bold m-auto w-[50%] text-center`}>
-        Give your restaurant the same tech as the big brands
-      </h3>
+      <div>
+        <h3 className={`text-4xl font-bold m-auto  text-center`}>
+          Give your restaurant the same tech
+        </h3>
+        <h3 className={`text-4xl font-bold m-auto  text-center`}>
+          as the big brands
+        </h3>
+      </div>
 
-      <div className='flex flex-col w-[1200px] m-auto mt-12 gap-4'>
+      <div className='flex flex-col w-[96%] md:w-[90%] xl:w-[1200px] m-auto mt-12 gap-4'>
         <div
           style={{
             backgroundImage: `url(${FoodPhoneScreen})`,
@@ -41,11 +49,10 @@ export default function BigBrandsTech({}: Props) {
           </div>
         </div>
 
-        <div className='flex gap-4 items-center'>
+        <div className='flex flex-col lg:flex-row gap-4 items-center'>
           <div
             style={{
               backgroundImage: `url(${SkeletonBackground})`,
-              width: '50%',
               height: '500px',
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
@@ -54,6 +61,7 @@ export default function BigBrandsTech({}: Props) {
               display: 'flex',
               justifyContent: 'center',
             }}
+            className='w-full lg:w-[50%]'
           >
             <h5
               className={`${styles['other-texts']} absolute bottom-8 text-lg font-bold text-center w-[60%]`}
@@ -63,7 +71,7 @@ export default function BigBrandsTech({}: Props) {
             </h5>
           </div>
 
-          <div className='relative bg-[#f4ece0] rounded-[40px] h-[500px] p-8 w-[50%] flex flex-col justify-between'>
+          <div className='relative bg-[#f4ece0] rounded-[40px] h-[500px] p-8 w-full lg:w-[50%] flex flex-col justify-between'>
             <div className='relative flex flex-col items-center justify-center h-[80%]'>
               <img
                 src={Food2}

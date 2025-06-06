@@ -80,7 +80,7 @@ const rightReviews: ReviewProps[] = [
 
 export default function Reviews({}: Props) {
   return (
-    <section className='flex justify-center gap-2'>
+    <section className='flex justify-center gap-2 overflow-hidden'>
       <div className='flex flex-col gap-2'>
         {leftReviews.map((review, index) => (
           <Review

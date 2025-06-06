@@ -4,7 +4,7 @@
 }
 
 .nav--contents {
-  max-width: 1200px;
+  max-width: 1400px;
   width: 100%;
   margin: 0 auto;
 
@@ -13,4 +13,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1400px) {
+  .nav--contents {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 1230px) {
+  .nav--contents {
+    max-width: 97%;
+  }
 }

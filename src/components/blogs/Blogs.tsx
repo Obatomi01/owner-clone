@@ -75,15 +75,26 @@ const blogs: BlogProps[] = [
 export default function Blogs({}: Props) {
   return (
     <section className={`mt-[124px] flex-col ${styles['content--container']}`}>
-      <div className='flex justify-between items-center w-full mb-12'>
-        <h2 className='text-5xl font-semibold w-[50%]'>
+      <div className='flex flex-col gap-4 lg:gap-0 lg:flex-row justify-between lg:items-center w-full mb-12'>
+        <div className='hidden lg:block'>
+          <h2 className='md:text-4xl lg:text-5xl font-bold'>
+            See our free guides on
+          </h2>
+          <h2 className='md:text-4xl lg:text-5xl font-bold'>
+            growing your restaurant
+          </h2>
+        </div>
+
+        <h2 className='text-3xl md:text-4xl font-bold'>
           See our free guides on growing your restaurant
         </h2>
 
-        <ArrowHoverButton isBlack text='Read the blog' />
+        <div className='w-max'>
+          <ArrowHoverButton isBlack text='Read the blog' />
+        </div>
       </div>
 
-      <div className='flex justify-between w-full'>
+      <div className='flex gap-4 flex-col lg:gap-0 lg:flex-row justify-between w-full'>
         {blogs.map((blog, index) => (
           <Blog key={index} {...blog} />
         ))}

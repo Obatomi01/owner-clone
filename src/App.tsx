@@ -17,7 +17,9 @@ function App() {
       <Nav />
       <Hero />
 
-      <h3 className={`mt-32 text-4xl ${styles['container']} font-bold`}>
+      <h3
+        className={`text-3xl mt-32 md:text-4xl ${styles['container']} font-bold`}
+      >
         Trusted by thousands of owners
       </h3>
       <ThousandsOfOwners />

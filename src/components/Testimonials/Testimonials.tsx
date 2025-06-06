@@ -47,7 +47,7 @@ const testimonials: TestimonyProps[] = [
 
         <div>
           <h3 className='text-3xl font-semibold'>$21,000</h3>
-          <p className='text-sm'>Savings in third-party fees</p>
+          <p className='text-sm'>Savings</p>
         </div>
       </div>
     ),
@@ -83,19 +83,19 @@ const testimonials: TestimonyProps[] = [
       <div className='flex gap-4'>
         <div>
           <h3 className='text-3xl font-semibold'>+400%</h3>
-          <p className='text-sm'>Online reviews in 6 months</p>
+          <p className='text-sm'>Online reviews</p>
         </div>
 
         <div>
           <h3 className='text-3xl font-semibold'>+50%</h3>
-          <p className='text-sm'>Customer satisfaction ratings</p>
+          <p className='text-sm'>Customer satisfaction </p>
         </div>
       </div>
     ),
     firstName: 'Priya',
     company: 'Spice Route',
     imgSrc: Owner4,
-    name: 'Priya Patel & Rajesh Kumar',
+    name: 'Priya Patel',
     review:
       'Our online presence has never been stronger. The app is user-friendly and efficient.',
   },
@@ -125,7 +125,6 @@ export default function Testimonials() {
     <div className={styles.wrapper}>
       <Swiper
         modules={[Pagination, Autoplay]}
-        slidesPerView={1.3}
         centeredSlides
         loop
         spaceBetween={30}
@@ -138,6 +137,14 @@ export default function Testimonials() {
           clickable: true,
         }}
         className={styles.swiper}
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+          },
+          1278: {
+            slidesPerView: 1.3,
+          },
+        }}
       >
         {testimonials.map((testimony, index) => (
           <SwiperSlide key={index}>

@@ -95,9 +95,37 @@ function ThousandsOfOwners() {
     speed: 2000,
     autoplaySpeed: 2000,
     cssEase: 'linear',
+    responsive: [
+      {
+        breakpoint: 1230,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
-    <div className='slider-container my-12'>
+    <div
+      className='slider-container my-12'
+      style={{
+        overflowX: 'hidden',
+      }}
+    >
       <Slider {...settings}>
         {owners.map((owner, index) => (
           <div key={index} className='px-2'>

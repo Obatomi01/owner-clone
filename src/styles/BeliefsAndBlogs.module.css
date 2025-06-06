@@ -21,3 +21,16 @@
   display: flex;
   justify-content: space-between;
 }
+
+/* MEDIA QUERY */
+@media (max-width: 1263px) {
+  .content--container {
+    padding-inline: 48px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding-block: 80px;
+  }
+}

@@ -20,15 +20,44 @@ export default function Footer({}: Props) {
         paddingBottom: '10px',
       }}
     >
-      <div className='w-[50%] p-24'>
-        <h1
-          style={{
-            color: '#fff',
-          }}
-          className='text-5xl font-bold mb-6'
-        >
-          The easiest way to grow your restaurant online.
-        </h1>
+      <div className='p-8 lg:p-24'>
+        <div className='hidden md:block'>
+          <h1
+            style={{
+              color: '#fff',
+            }}
+            className='md:text-4xl lg:text-5xl font-bold'
+          >
+            The easiest way to grow
+          </h1>
+          <h1
+            style={{
+              color: '#fff',
+            }}
+            className='md:text-4xl lg:text-5xl font-bold mb-6'
+          >
+            your restaurant online.
+          </h1>
+        </div>
+
+        <div className='block md:hidden'>
+          <h1
+            style={{
+              color: '#fff',
+            }}
+            className='text-4xl font-bold'
+          >
+            The easiest way to grow your
+          </h1>
+          <h1
+            style={{
+              color: '#fff',
+            }}
+            className='text-4xl font-bold mb-6'
+          >
+            restaurant online.
+          </h1>
+        </div>
         <ArrowHoverButton isBlack text='Get a free demo' />
       </div>
 

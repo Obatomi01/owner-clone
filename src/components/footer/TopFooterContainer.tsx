@@ -14,7 +14,7 @@ const RightBox = ({
 }) => (
   <a
     style={{ backgroundColor: bgColor }}
-    className='w-[260px] h-[180px] rounded-2xl transition-colors duration-300 cursor-pointer relative'
+    className='w-[48%] md:w-[260px] h-[180px] rounded-2xl transition-colors duration-300 cursor-pointer relative'
     onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = hoverColor)}
     onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = bgColor)}
   >
@@ -42,12 +42,12 @@ const RightBox = ({
 
 export default function TopFooterContainer({}: Props) {
   return (
-    <div className='flex justify-between'>
+    <div className='flex flex-col gap-4 md:flex-row md:gap-0justify-between'>
       <div className='w-[120px] h-[32px]'>
         <Logo />
       </div>
 
-      <div className='flex gap-4'>
+      <div className='flex gap-4 w-full md:w-max'>
         <RightBox
           bgColor='#090a0b'
           text='Get a free demo'

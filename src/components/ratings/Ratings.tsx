@@ -7,9 +7,14 @@ type Props = {};
 export default function Ratings({}: Props) {
   return (
     <section className={`mt-52 pb-48 ${styles['ratings--container']}`}>
-      <h1 className='text-4xl m-auto text-center w-[35%] mb-12 font-bold'>
-        See why we're rated #1 in restaurant tech
-      </h1>
+      <div>
+        <h1 className='text-4xl m-auto text-center font-bold'>
+          See why we're rated #1
+        </h1>
+        <h1 className='text-4xl m-auto text-center mb-12 font-bold'>
+          in restaurant tech
+        </h1>
+      </div>
 
       <Reviews />
 

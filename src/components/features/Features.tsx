@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 import Background1 from '../../assets/features-background/blue-background.jpg';
@@ -14,6 +14,7 @@ import styles from '../../styles/ReviewCarousel.module.css';
 
 import type { FeatureProps } from './Feature';
 import Feature from './Feature';
+import MobileFeatureSlider from './MobileFeatureSlider';
 
 interface CarouselItem {
   id: number;
@@ -70,16 +71,16 @@ const items: CarouselItem[] = [
 const Features = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoScrolling, setIsAutoScrolling] = useState(true);
-
   const [isAnimating, setIsAnimating] = useState(false);
   const [targetIndex, setTargetIndex] = useState(0);
   const [progressKey, setProgressKey] = useState(0);
 
+  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
   const goToFirst = () => {
-    if (currentIndex === 0) return;
+    if (currentIndex === 0 || !items?.length) return;
 
     setIsAutoScrolling(false);
-
     setCurrentIndex(0);
     setTargetIndex(0);
     setProgressKey((prev) => prev + 1);
@@ -93,7 +94,18 @@ const Features = () => {
   };
 
   useEffect(() => {
-    if (!isAutoScrolling || isAnimating) return;
+    if (window.innerWidth < 1024) {
+      const activeButton = buttonRefs.current[currentIndex];
+      activeButton?.scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'nearest',
+      });
+    }
+  }, [currentIndex]);
+
+  useEffect(() => {
+    if (!isAutoScrolling || isAnimating || !items?.length) return;
 
     const interval = setInterval(() => {
       if (currentIndex >= items.length - 1) {
@@ -106,18 +118,17 @@ const Features = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [isAutoScrolling, currentIndex, isAnimating]);
+  }, [isAutoScrolling, currentIndex, isAnimating, items?.length]);
 
   const goToSlide = (index: number) => {
-    if (isAnimating || index === currentIndex) return;
+    if (isAnimating || index === currentIndex || !items?.length) return;
 
     setIsAutoScrolling(false);
     setTargetIndex(index);
-
     setCurrentIndex(index);
     setProgressKey((prev) => prev + 1);
-
     setIsAnimating(true);
+
     setTimeout(() => {
       setIsAnimating(false);
       setIsAutoScrolling(true);
@@ -133,13 +144,30 @@ const Features = () => {
     }
   };
 
-  return (
-    <div className='mx-auto mt-[144px] w-[1200px]'>
-      <h2 className='text-4xl font-bold mb-6 text-center w-[60%] mx-auto'>
-        With Owner, you get more traffic, more sales, more repeat customers
-      </h2>
+  // Modified navigation functions with validation
+  const goToPrevious = () => {
+    if (isAnimating || currentIndex === 0 || !items?.length) return; // Don't proceed if already at first slide
+    goToSlide(currentIndex - 1);
+  };
 
-      <div className='grid grid-cols-2 md:grid-cols-4 gap-4 mb-6'>
+  const goToNext = () => {
+    if (isAnimating || currentIndex === items.length - 1 || !items?.length)
+      return; // Don't proceed if already at last slide
+    goToSlide(currentIndex + 1);
+  };
+
+  return (
+    <div className='mx-auto mt-[144px] md:w-[90%] lg:w-[1000px] xl:w-[1200px]'>
+      <div>
+        <h2 className='text-4xl font-bold text-center mx-auto'>
+          With Owner, you get more traffic,
+        </h2>
+        <h2 className='text-4xl font-bold mb-6 text-center mx-auto'>
+          more sales, more repeat customers
+        </h2>
+      </div>
+
+      <div className='hidden lg:grid grid-flow-col auto-cols-[90%] gap-4 lg:grid-cols-4 lg:auto-cols-auto mb-8'>
         {items.map((item, index) => (
           <div key={item.id} className='flex flex-col'>
             <button
@@ -172,7 +200,7 @@ const Features = () => {
       </div>
 
       <div
-        className='relative h-[600px] overflow-hidden'
+        className='hidden lg:block relative h-[600px] overflow-hidden'
         style={{ borderRadius: '48px' }}
       >
         <motion.div
@@ -193,12 +221,34 @@ const Features = () => {
         </motion.div>
       </div>
 
-      <div className='flex justify-between mt-6 px-10'>
+      <MobileFeatureSlider
+        items={items}
+        getButtonState={getButtonState}
+        isAutoScrolling={isAutoScrolling}
+        isAnimating={isAnimating}
+        progressKey={progressKey}
+        currentIndex={currentIndex}
+        setCurrentIndex={(index) => {
+          // Only update if it's a valid manual change (not from auto-scroll)
+          if (index !== currentIndex && !isAnimating) {
+            setCurrentIndex(index);
+            setTargetIndex(index);
+            setProgressKey((prev) => prev + 1);
+            setIsAutoScrolling(false);
+            setIsAnimating(true);
+
+            setTimeout(() => {
+              setIsAnimating(false);
+              setIsAutoScrolling(true);
+              setProgressKey((prev) => prev + 1);
+            }, 1000);
+          }
+        }}
+      />
+
+      <div className='flex justify-center lg:justify-between mt-6 px-10'>
         <button
-          onClick={() => {
-            if (isAnimating || currentIndex === 0) return;
-            goToSlide(currentIndex - 1);
-          }}
+          onClick={goToPrevious}
           className={`flex items-center gap-2 p-2 rounded-4xl transition-colors hover:bg-[#090a0b12] cursor-pointer ${styles['prev-arrow']}`}
         >
           <div
@@ -211,23 +261,22 @@ const Features = () => {
             <img src={ArrowBack} alt='Previous' />
           </div>
           <span
-            className={`${currentIndex === 0 ? 'text-gray-400' : 'text-black'}`}
+            className={`${
+              currentIndex === 0 ? 'text-gray-400' : 'text-black'
+            } hidden lg:block`}
           >
             Previous
           </span>
         </button>
 
         <button
-          onClick={() => {
-            if (isAnimating || currentIndex === items.length - 1) return;
-            goToSlide(currentIndex + 1);
-          }}
+          onClick={goToNext}
           className={`flex items-center gap-2 p-2 rounded-4xl transition-colors hover:bg-[#090a0b12] cursor-pointer ${styles['next-arrow']}`}
         >
           <span
             className={`${
               currentIndex === items.length - 1 ? 'text-gray-400' : 'text-black'
-            }`}
+            } hidden lg:block`}
           >
             Next
           </span>

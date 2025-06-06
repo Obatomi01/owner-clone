@@ -30,14 +30,20 @@ const beliefs: BeliefProps[] = [
 export default function Beliefs({}: Props) {
   return (
     <section className={styles['content--container']}>
-      <div className='w-[40%] flex flex-col justify-between'>
-        <div className='flex flex-col gap-4'>
+      <div className='w-[95%] lg:w-[50%] xl:w-[40%] flex flex-col justify-between gap-8'>
+        <div className='flex flex-col gap-8 lg:gap-4'>
           <h2 className='text-5xl font-semibold'>
             Three beliefs that guide our company
           </h2>
           <p className='text-sm'>
             Understand the principles that guide our decisions.
           </p>
+        </div>
+
+        <div className='flex flex-col lg:hidden'>
+          {beliefs.map((belief, index) => (
+            <Belief {...belief} key={index} />
+          ))}
         </div>
 
         <div className='flex gap-8 items-end'>
@@ -54,7 +60,7 @@ export default function Beliefs({}: Props) {
         </div>
       </div>
 
-      <div className='w-[55%]'>
+      <div className='hidden lg:block w-[55%] lg:w-[50%] '>
         {beliefs.map((belief, index) => (
           <Belief {...belief} key={index} />
         ))}

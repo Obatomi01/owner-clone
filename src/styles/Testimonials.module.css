@@ -120,3 +120,10 @@
     width: 100%;
   }
 }
+
+/* MEDIA QUERIES */
+@media (max-width: 1278px) {
+  .wrapper::before {
+    background: none;
+  }
+}

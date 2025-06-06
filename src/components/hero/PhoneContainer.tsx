@@ -31,14 +31,13 @@ export default function PhoneContainer({}: Props) {
   return (
     <div
       style={{
-        paddingTop: '156px',
-
         background: 'linear-gradient(to bottom, #f7f2e8, #fffdf8, #ffffff)',
         width: '100%',
         height: '100%',
       }}
+      className='pt-[96px] md:pt-[156px]'
     >
-      <div className='m-auto text-center'>
+      <div className='m-auto text-center mb-6'>
         <p
           style={{
             color: '#000',
@@ -50,6 +49,7 @@ export default function PhoneContainer({}: Props) {
             style={{
               color: '#999',
             }}
+            className='hidden md:inline'
           >
             4.8{' '}
             <img
@@ -64,7 +64,8 @@ export default function PhoneContainer({}: Props) {
           </span>
         </p>
       </div>
-      <h1 className='text-7xl m-auto text-center w-[65%] mb-12 font-bold'>
+
+      <h1 className='px-4 text-4xl md:text-6xl xl:text-7xl m-auto text-center md:w-[80%] xl:w-[65%] mb-12 font-bold md:p-0'>
         See where your restaurant is losing sales online
       </h1>
 
@@ -72,6 +73,7 @@ export default function PhoneContainer({}: Props) {
         <div style={{ opacity }}>
           <Feature text="See who's beating you on Google" isTop={false} />
         </div>
+
         <div className={styles['image-container']}>
           <img
             style={{ width: '100%' }}

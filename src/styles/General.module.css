@@ -42,3 +42,42 @@
 .big--brands__container .sales--text span {
   color: #000;
 }
+
+.menu {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+}
+
+.line {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  transform-origin: center;
+}
+
+/* Top and bottom line transforms */
+.opened .top {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.opened .bottom {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* MEDIA QUERY */
+@media (max-width: 1400px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 98%;
+  }
+}

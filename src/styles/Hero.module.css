@@ -66,3 +66,11 @@
     background-position: 0 -1000px;
   }
 }
+
+/* MEDIA QUERY */
+@media (max-width: 900px) {
+  .image-container {
+    width: 300px;
+    height: 600px;
+  }
+}

@@ -21,8 +21,8 @@ export default function Testimony({
   firstName,
 }: TestimonyProps) {
   return (
-    <div className='w-[1200px] h-[450px] flex justify-between bg-white rounded-4xl'>
-      <div className='group w-[40%] h-full overflow-hidden rounded-4xl relative'>
+    <div className='md:w-[96vw] xl:w-[1200px] h-max md:h-[450px] flex justify-between flex-col md:flex-row bg-white rounded-4xl'>
+      <div className='group w-[100%] md:w-[45%] xl:w-[40%] h-[500px] md:h-full overflow-hidden rounded-4xl relative'>
         <div
           style={{
             backgroundImage: `url(${imgSrc})`,
@@ -68,17 +68,19 @@ export default function Testimony({
         </div>
       </div>
 
-      <div className='w-[60%] p-8 flex flex-col justify-between'>
-        <h3 className='text-3xl font-bold'>{review}</h3>
+      <div className='md:w-[55%] xl:w-[60%] p-8 flex flex-col justify-between h-[400px] md:h-full'>
+        <h3 className='text-3xl font-bold'>"{review}"</h3>
 
-        <div className='flex justify-between items-center'>
+        <div className='flex flex-col gap-2 lg:gap-0 lg:flex-row justify-between lg:items-center'>
           {description}
 
-          <ArrowHoverButton
-            isBlack={false}
-            text={`See ${firstName}'s story`}
-            isCentered={false}
-          />
+          <div className='w-max'>
+            <ArrowHoverButton
+              isBlack={false}
+              text={`See ${firstName}'s story`}
+              isCentered={false}
+            />
+          </div>
         </div>
       </div>
     </div>
